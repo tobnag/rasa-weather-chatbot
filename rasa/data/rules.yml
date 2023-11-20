@@ -11,3 +11,22 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Activate weather_for_location_form
+  steps:
+  - intent: request_weather
+  - action: weather_for_location_form
+  - active_loop: weather_for_location_form
+  
+- rule: Submit weather_for_location_form
+  condition:
+  - active_loop: weather_for_location_form
+  steps:
+  - action: weather_for_location_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_request_location
+  - action: utter_location_mapping
+  - action: action_request_weather
+  - action: utter_weather
