@@ -1,3 +1,5 @@
 # rasa specific files
 /rasa/.rasa
 /rasa/models
+/rasa/actions/config.py
+*.dot
