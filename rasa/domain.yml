@@ -1,11 +1,5 @@
 version: "3.1"
 
-# Form definition. Forms refer to slots defined below
-forms:
-  weather_for_location_form:
-    required_slots:
-      - user_location
-
 # Slot definition. Slots refer to actions, entities, and intents defined below.
 slots:
   user_location:
@@ -13,8 +7,7 @@ slots:
     influence_conversation: false
     mappings:
       - type: from_entity
-        entity: user_location
-        intent: inform_location
+        entity: city
 
   mapped_location:
     type: text
@@ -65,7 +58,7 @@ actions:
 
 # Entity definition.
 entities:
-  - user_location
+  - city
 
 # Intent definition.
 intents:
@@ -74,8 +67,10 @@ intents:
   - affirm
   - deny
   - bot_challenge
-  - request_weather
+  - thanks
+  - ask_weather
   - inform_location
+  - ask_weather_in_location
 
 # Response definition.
 responses:
@@ -88,10 +83,12 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
-  utter_ask_user_location:
-  - text: "In which location?"
+  utter_welcome:
+  - text: "You are welcome!"
+
+  utter_ask_location:
+  - text: "In which city?"
   - text: "Where do you want to know the weather?"
-  - text: "For which city?"
 
   utter_location_mapping:
   - text: "Your requested location {user_location} was mapped to {mapped_location}."

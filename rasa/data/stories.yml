@@ -6,3 +6,24 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
+  - intent: ask_weather
+  - action: utter_ask_location
+  - intent: inform_location
+  - action: action_request_location
+  - action: utter_location_mapping
+  - action: action_request_weather
+  - action: utter_weather
+  - intent: thanks
+  - action: utter_welcome
+
+- story: happy path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_weather_in_location
+  - action: action_request_location
+  - action: utter_location_mapping
+  - action: action_request_weather
+  - action: utter_weather
+  - intent: thanks
+  - action: utter_welcome

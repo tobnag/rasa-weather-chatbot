@@ -56,23 +56,117 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
 
-- intent: request_weather
+- intent: thanks
+  examples: |
+    - thanks
+    - thank you
+    - thankyou
+    - thx
+    - cheers
+    - ok thanks
+    - okay thanks
+    - okay
+    - perfect thank you
+    - thanks a lot
+
+- intent: ask_weather
   examples: |
     - Give me the weather.
     - What is the weather?
     - How is the weather?
     - What is the weather like?
+    - I want to check the weather.
+    - I'd like to know the weather.
 
 - intent: inform_location
   examples: |
-    - [London](user_location)
-    - [Brussels](user_location)
-    - For [Tokyo](user_location)
-    - In [Berlin](user_location)
-    - Weather in [Rome](user_location)
-    - Weather for [Munich](user_location)
-    - I want to check the weather in [New York](user_location)
-    - I'd like to know the weather in [Hamburg](user_location)
+    - [London](city)
+    - [Toronto](city)
+    - [New York](city)
+    - [Rome](city)
+    - [Munich](city)
+    - [Berlin](city)
+    - [Hamburg](city)
+    - [Jakarta](city)
+    - [Delhi](city)
+    - [Guangzhou](city)
+    - [Mumbai](city)
+    - [Manila](city)
+    - [Shanghai](city)
+    - [Seoul](city)
+    - [Mexico City](city)
+    - [Cairo](city)
+    - [New York](city)
+    - [Dhaka](city)
+    - [Beijing](city)
+    - [Bangkok](city)
+    - [Shenzhen](city)
+    - [Moscow](city)
+    - [Buenos Aires](city)
+    - [Lagos](city)
+    - [Istanbul](city)
+    - [Karachi](city)
+    - [Bangalore](city)
+    - [Chengdu](city)
+    - [Tehran](city)
+    - [Kinshasa](city)
+    - [Rio de Janeiro](city)
+    - [Chennai](city)
+    - [Lahore](city)
+    - [Chongqing](city)
+    - [Los Angeles](city)
+    - [Ho Chi Minh City](city)
+    - For [Toronto](city)
+    - For [Munich](city)
+    - For [Berlin](city)
+    - For [Hamburg](city)
+    - In [London](city)
+    - In [New York](city)
+    - In [Rome](city)
+    - In [Munich](city)
+    - In [Jakarta](city)
+    - In [Delhi](city)
+    - In [Guangzhou](city)
+    - In [Mumbai](city)
+    - In [Manila](city)
+    - In [Shanghai](city)
+    - In [Seoul](city)
+    - In [Mexico City](city)
+    - In [Cairo](city)
+    - In [New York](city)
+    - In [Dhaka](city)
+    - In [Beijing](city)
+    - Weather in [Rome](city)
+    - Weather for [Munich](city)
+    - I want to check the weather in [Berlin](city)
+    - I'd like to know the weather in [Hamburg](city)
+
+- intent: ask_weather_in_location
+  examples: |
+    - What is the weather in [London](city)
+    - What is the weather in [Toronto](city)
+    - What is the weather in [New York](city)
+    - What is the weather like in [Rome](city)? 
+    - What is the weather like for [Munich](city)?
+    - How is the weather in [Berlin](city)?
+    - How is the weather in [Hamburg](city)?
+    - Give me the weather in [Paris](city)
+    - Give me the weather in [Madrid](city)
+    - I want to check the weather in [Barcelona](city)
+    - I'd like to know the weather in [Cologne](city)
+    - I want to know the weather in [Jakarta](city)
+    - I want to know the weather in [Delhi](city)
+    - I want to know the weather in [Guangzhou](city)
+    - I want to know the weather in [Mumbai](city)
+    - I want to know the weather in [Manila](city)
+    - I want to know the weather in [Shanghai](city)
+    - I want to know the weather in [Seoul](city)
+    - I want to know the weather in [Mexico City](city)
+    - I want to know the weather in [Cairo](city)
+    - I want to know the weather in [New York](city)
+    - I want to know the weather in [Dhaka](city)
+    - I want to know the weather in [Beijing](city)
+
 
 - synonym: weather
   examples: |
