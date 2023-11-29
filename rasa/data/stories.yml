@@ -2,28 +2,140 @@ version: "3.1"
 
 stories:
 
-- story: happy path 1
+- story: weather from start 1
   steps:
   - intent: greet
   - action: utter_greet
   - intent: ask_weather
   - action: utter_ask_location
   - intent: inform_location
+    entities:
+    - city: London
+  - slot_was_set:
+    - user_location: London
   - action: action_request_location
+  - slot_was_set:
+    - mapped_location: London (UK)
+    - mapped_latitude: 51.5073219
+    - mapped_longitude: -0.1276474
   - action: utter_location_mapping
   - action: action_request_weather
+  - slot_was_set:
+    - weather: cloudy
+    - temperature: 10.0
+    - cloudiness: 90.0
+    - wind_speed: 4.0
+    - temperature_unit: °C
   - action: utter_weather
   - intent: thanks
   - action: utter_welcome
 
-- story: happy path 2
+- story: weather from start 2
   steps:
   - intent: greet
   - action: utter_greet
   - intent: ask_weather_in_location
+    entities:
+    - city: London
+  - slot_was_set:
+    - user_location: London
   - action: action_request_location
+  - slot_was_set:
+    - mapped_location: London (UK)
+    - mapped_latitude: 51.5073219
+    - mapped_longitude: -0.1276474
   - action: utter_location_mapping
   - action: action_request_weather
+  - slot_was_set:
+    - weather: cloudy
+    - temperature: 10.0
+    - cloudiness: 90.0
+    - wind_speed: 4.0
+    - temperature_unit: °C
   - action: utter_weather
+  - intent: thanks
+  - action: utter_welcome
+
+- story: temperature from start
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_temperature
+  - action: utter_ask_location
+  - intent: inform_location
+    entities:
+    - city: London
+  - slot_was_set:
+    - user_location: London
+  - action: action_request_location
+  - slot_was_set:
+    - mapped_location: London (UK)
+    - mapped_latitude: 51.5073219
+    - mapped_longitude: -0.1276474
+  - action: utter_location_mapping
+  - action: action_request_weather
+  - slot_was_set:
+    - weather: cloudy
+    - temperature: 10.0
+    - cloudiness: 90.0
+    - wind_speed: 4.0
+    - temperature_unit: °C
+  - action: utter_temperature
+  - intent: thanks
+  - action: utter_welcome
+
+- story: cloudiness from start
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_cloudiness
+  - action: utter_ask_location
+  - intent: inform_location
+    entities:
+    - city: London
+  - slot_was_set:
+    - user_location: London
+  - action: action_request_location
+  - slot_was_set:
+    - mapped_location: London (UK)
+    - mapped_latitude: 51.5073219
+    - mapped_longitude: -0.1276474
+  - action: utter_location_mapping
+  - action: action_request_weather
+  - slot_was_set:
+    - weather: cloudy
+    - temperature: 10.0
+    - cloudiness: 90.0
+    - wind_speed: 4.0
+    - temperature_unit: °C
+  - action: utter_cloudiness
+  - intent: thanks
+  - action: utter_welcome
+
+- story: wind speed from start
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_wind_speed
+  - action: utter_ask_location
+  - intent: inform_location
+    entities:
+    - city: London
+  - slot_was_set:
+    - user_location: London
+  - action: action_request_location
+  - slot_was_set:
+    - mapped_location: London (UK)
+    - mapped_latitude: 51.5073219
+    - mapped_longitude: -0.1276474
+  - action: utter_location_mapping
+  - action: action_request_weather
+  - slot_was_set:
+    - weather: cloudy
+    - temperature: 10.0
+    - cloudiness: 90.0
+    - wind_speed: 4.0
+    - temperature_unit: °C
+  - action: utter_wind_speed
   - intent: thanks
   - action: utter_welcome

@@ -74,7 +74,9 @@ class ActionRequestWeather(Action):
             actions = [
                 SlotSet('weather', data['weather'][0]['description']),
                 SlotSet('temperature', data['main']['temp']),
-                SlotSet('temperature_unit', const.TEMPERATURE_UNIT)
+                SlotSet('cloudiness', data['clouds']['all']),
+                SlotSet('wind_speed', data['wind']['speed']),
+                SlotSet('temperature_unit', const.TEMPERATURE_UNIT),
             ]
         # TODO: Handle errors and empty responses
         return actions    

@@ -8,6 +8,9 @@ slots:
     mappings:
       - type: from_entity
         entity: city
+        intent:
+          - inform_location
+          - ask_weather_in_location
 
   mapped_location:
     type: text
@@ -44,6 +47,21 @@ slots:
       - type: custom
         action: action_request_weather
 
+  cloudiness:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: custom
+        action: action_request_weather
+
+  wind_speed:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: custom
+        action: action_request_weather
+
+  # TODO: Implement default value and unit conversion.
   temperature_unit:
     type: text
     influence_conversation: false
@@ -71,6 +89,9 @@ intents:
   - ask_weather
   - inform_location
   - ask_weather_in_location
+  - ask_temperature
+  - ask_cloudiness
+  - ask_wind_speed
 
 # Response definition.
 responses:
@@ -94,7 +115,16 @@ responses:
   - text: "Your requested location {user_location} was mapped to {mapped_location}."
 
   utter_weather:
-  - text: "The weather in {mapped_location} is {weather} at {temperature} {temperature_unit}."
+  - text: "The weather in {mapped_location} is {weather} at {temperature} {temperature_unit} and {wind_speed} m/s wind speed."
+
+  utter_temperature:
+  - text: "The temperature in {mapped_location} is {temperature} {temperature_unit}."
+
+  utter_cloudiness:
+  - text: "The cloudiness in {mapped_location} is {cloudiness}%."
+
+  utter_wind_speed:
+  - text: "The wind speed in {mapped_location} is {wind_speed} m/s."
 
 # Session configuration.
 session_config:

@@ -167,6 +167,61 @@ nlu:
     - I want to know the weather in [Dhaka](city)
     - I want to know the weather in [Beijing](city)
 
+- intent: ask_temperature
+  examples: |
+    - What is the temperature?
+    - How is the temperature?
+    - What is the temperature like?
+    - What is the temperature outside?
+    - Give me the temperature.
+    - I want to check the temperature.
+    - I'd like to know the temperature.
+    - Is it hot?
+    - Is it cold?
+    - Is it warm?
+    - Is it freezing?
+    - Is it chilly?
+    - Is it cool?
+    - Is it mild?
+    - Do I need a jacket?
+    - Do I need a coat?
+    - Do I need a sweater?
+    - Can I wear shorts?
+    - Can I wear a t-shirt?
+    - Can I wear a dress?
+    - Can I wear a skirt?
+    - Can I wear a tank top?
+
+- intent: ask_cloudiness
+  examples: |
+    - Is it cloudy?
+    - Is it sunny?
+    - Are there clouds?
+    - Is it cloudy outside?
+    - Is it sunny outside?
+    - How is the sky?
+    - Can you see the sun?
+    - Is the sun shining?
+    - Is the sun out?
+    - Is the sky clear?
+    - Is the sky cloudy?
+    - Is the sky sunny?
+
+- intent: ask_wind_speed
+  examples: |
+    - Is it windy?
+    - Is it breezy?
+    - Is it stormy?
+    - Is it windy outside?
+    - Is it breezy outside?
+    - How is the wind?
+    - Is it windy today?
+    - Is there wind?
+    - Is there a breeze?
+    - Is there a storm?
+    - How is the wind speed?
+    - Tell me the wind speed.
+    - What is the wind speed?    
 
 - synonym: weather
   examples: |
