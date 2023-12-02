@@ -38,10 +38,16 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - alright
+    - ok
+    - okay
+    - kay
 
 - intent: deny
   examples: |
     - no
+    - no, thank you
+    - no thanks
     - n
     - never
     - I don't think so
@@ -63,9 +69,6 @@ nlu:
     - thankyou
     - thx
     - cheers
-    - ok thanks
-    - okay thanks
-    - okay
     - perfect thank you
     - thanks a lot
 

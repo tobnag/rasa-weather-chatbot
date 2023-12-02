@@ -107,9 +107,24 @@ responses:
   utter_welcome:
   - text: "You are welcome!"
 
+  utter_no_problem:
+  - text: "No problem! I'll be here if you need me."
+  - text: "All right. Just text me if you need me."
+  - text: "Okay. I'll be here if you need me."
+
+  utter_anything_else:
+  - text: "Is there anything else I can help you with?"
+  - text: "What else can I do for you?"
+  - text: "Do you want to know anything else?"
+
+  utter_opener:
+  - text: "I can tell you the weather in a city. What do you want to know?"
+  - text: "What do you want to know about the weather?"
+  - text: "What can I tell you about the weather?"
+
   utter_ask_location:
   - text: "In which city?"
-  - text: "Where do you want to know the weather?"
+  - text: "Where?"
 
   utter_location_mapping:
   - text: "Your requested location {user_location} was mapped to {mapped_location}."

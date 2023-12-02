@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Rasa Core Visualisation</title>
+    <script src="https://dagrejs.github.io/project/dagre-d3/latest/dagre-d3.min.js"></script>
+    <script src="https://dagrejs.github.io/project/dagre/latest/dagre.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://dagrejs.github.io/project/graphlib-dot/v0.6.3/graphlib-dot.js"></script>
+</head>
+<body>
+<div id="errormsg" style="color: #b00"></div>
+<svg>
+    <style id="graph-style">
+        .node.invisible > rect {
+            display: none;
+        }
+
+        .node.start > rect {
+            fill: #7f7;
+            rx: 30;
+            ry: 18;
+        }
+
+        .node.end > rect {
+            fill: #f77;
+            rx: 30;
+            ry: 18;
+        }
+
+        .node:not(.active) > rect, .node:not(.active) > .label {
+            opacity: 0.4;
+        }
+
+        .edgePath:not(.active) path {
+            opacity: 0.4;
+        }
+
+        .node.ellipsis > rect {
+            fill: #CCC;
+        }
+
+        .node.intent > rect {
+            fill: #7ff;
+        }
+
+        .node.dashed > rect {
+            stroke-dasharray: 5;
+        }
+
+        text {
+            font-weight: 300;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serf, serif;
+            font-size: 14px;
+            color: #1f1d1d;
+        }
+
+        .node rect {
+            stroke: #444;
+            fill: #fff;
+            stroke-width: 1.5px;
+        }
+
+        .edgePath path {
+            stroke: #333;
+            stroke-width: 1.5px;
+        }
+
+        svg {
+            position: fixed;
+            top: 10px;
+            left: 0;
+            height: 100%;
+            width: 100%
+        }
+    </style>
+    <g></g>
+</svg>
+<script>
+
+  function serveGraph() {
+    let oldInputGraphValue;
+
+    const url = 'visualization.dot';
+    const refreshInterval = 500;
+
+    // trigger a refresh by fetching an updated graph
+    setInterval(function () {
+      fetch(url).then(r => r.text()).then(dot => {
+        document.getElementById('errormsg').innerHTML = '';
+        if (oldInputGraphValue === dot) return;
+
+        oldInputGraphValue = dot;
+        drawGraph(dot);
+      }).catch(err => {
+        document.getElementById('errormsg').innerHTML =
+          'Failed to update plot. (' + err.message + ')';
+      });
+    }, refreshInterval);
+  }
+
+  function drawGraph(graph) {
+    let g = graphlibDot.read(graph);
+    // Set margins, if not present
+    if (!g.graph().hasOwnProperty("marginx") &&
+      !g.graph().hasOwnProperty("marginy")) {
+      g.graph().marginx = 20;
+      g.graph().marginy = 20;
+    }
+    g.graph().transition = function (selection) {
+      return selection.transition().duration(300);
+    };
+    // Render the graph into svg g
+    d3.select("svg g").call(render, g);
+  }
+  // Set up zoom support
+  const svg = d3.select("svg"),
+    inner = d3.select("svg g"),
+    zoom = d3.zoom().on("zoom", function () {
+      inner.attr("transform", d3.event.transform);
+    });
+  svg.call(zoom);
+
+  // Create and configure the renderer
+  const render = dagreD3.render();
+
+  let isClient = false;
+  isClient = true;
+
+  if (isClient) {
+    // Mark all nodes and their edges as active
+    cssRules = document.getElementById('graph-style').sheet.cssRules;
+    cssRules[3].style.opacity = 1;
+    cssRules[4].style.opacity = 1;
+
+    let graph;
+    graph = `digraph  {
+0 [class="start active", fillcolor=green, fontsize=12, label=START, style=filled];
+"-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
+1 [class="", fontsize=12, label=utter_greet];
+2 [class="", fontsize=12, label=utter_ask_location];
+3 [class="", fontsize=12, label=action_request_location];
+4 [class="", fontsize=12, label=utter_location_mapping];
+5 [class="", fontsize=12, label=action_request_weather];
+6 [class="", fontsize=12, label=utter_wind_speed];
+7 [class="", fontsize=12, label=utter_welcome];
+8 [class="", fontsize=12, label=utter_anything_else];
+9 [class="", fontsize=12, label=utter_no_problem];
+10 [class="", fontsize=12, label=action_restart];
+16 [class="", fontsize=12, label=utter_cloudiness];
+26 [class="", fontsize=12, label=utter_weather];
+45 [class="", fontsize=12, label=utter_temperature];
+107 [class="", fontsize=12, label=utter_opener];
+112 [class="", fontsize=12, label=utter_anything_else];
+414 [class="", fontsize=12, label=utter_wind_speed];
+532 [class="", fontsize=12, label=utter_cloudiness];
+650 [class="", fontsize=12, label=utter_temperature];
+759 [class="", fontsize=12, label="..."];
+760 [class="", fontsize=12, label=utter_goodbye];
+763 [class="", fontsize=12, label=utter_iamabot];
+766 [class=intent, fillcolor=lightblue, label=hi, shape=rect, style=filled];
+767 [class=intent, fillcolor=lightblue, label="Is it windy today?", shape=rect, style=filled];
+768 [class=intent, fillcolor=lightblue, label="Is it sunny?", shape=rect, style=filled];
+769 [class=intent, fillcolor=lightblue, label="I want to check the weather.", shape=rect, style=filled];
+770 [class=intent, fillcolor=lightblue, label="I want to check the temperature.", shape=rect, style=filled];
+771 [class=intent, fillcolor=lightblue, label="How is the weather in Hamburg?", shape=rect, style=filled];
+772 [class=intent, fillcolor=lightblue, label="In Jakarta", shape=rect, style=filled];
+773 [class=intent, fillcolor=lightblue, label="thanks a lot", shape=rect, style=filled];
+774 [class=intent, fillcolor=lightblue, label=okay, shape=rect, style=filled];
+775 [class=intent, fillcolor=lightblue, label=no, shape=rect, style=filled];
+776 [class=intent, fillcolor=lightblue, label=okay, shape=rect, style=filled];
+777 [class=intent, fillcolor=lightblue, label="perfect thank you", shape=rect, style=filled];
+778 [class=intent, fillcolor=lightblue, label="that sounds good", shape=rect, style=filled];
+779 [class=intent, fillcolor=lightblue, label=cheers, shape=rect, style=filled];
+780 [class=intent, fillcolor=lightblue, label=alright, shape=rect, style=filled];
+781 [class=intent, fillcolor=lightblue, label=thanks, shape=rect, style=filled];
+782 [class=intent, fillcolor=lightblue, label=alright, shape=rect, style=filled];
+783 [class=intent, fillcolor=lightblue, label="I want to know the weather in Manila", shape=rect, style=filled];
+784 [class=intent, fillcolor=lightblue, label="What is the weather like?", shape=rect, style=filled];
+785 [class=intent, fillcolor=lightblue, label="Tell me the wind speed.", shape=rect, style=filled];
+786 [class=intent, fillcolor=lightblue, label="Is it cloudy?", shape=rect, style=filled];
+787 [class=intent, fillcolor=lightblue, label="Is it freezing?", shape=rect, style=filled];
+788 [class=intent, fillcolor=lightblue, label=cu, shape=rect, style=filled];
+789 [class=intent, fillcolor=lightblue, label="are you a bot?", shape=rect, style=filled];
+0 -> 759  [class="", key=NONE, label=""];
+0 -> 766  [class="", key=0];
+1 -> 767  [class="", key=0];
+1 -> 768  [class="", key=0];
+1 -> 769  [class="", key=0];
+1 -> 770  [class="", key=0];
+1 -> 771  [class="", key=0];
+2 -> 772  [class="", key=0];
+3 -> 4  [class="", key=NONE, label=""];
+4 -> 5  [class="", key=NONE, label=""];
+5 -> 6  [class="", key=NONE, label=""];
+5 -> 16  [class="", key=NONE, label=""];
+5 -> 26  [class="", key=NONE, label=""];
+5 -> 45  [class="", key=NONE, label=""];
+6 -> 773  [class="", key=0];
+6 -> 774  [class="", key=0];
+7 -> 8  [class="", key=NONE, label=""];
+8 -> 775  [class="", key=0];
+8 -> 776  [class="", key=0];
+9 -> 10  [class="", key=NONE, label=""];
+10 -> "-1"  [class="", key=NONE, label=""];
+16 -> 777  [class="", key=0];
+16 -> 778  [class="", key=0];
+26 -> 112  [class="", key=NONE, label=""];
+26 -> 779  [class="", key=0];
+26 -> 780  [class="", key=0];
+45 -> 781  [class="", key=0];
+45 -> 782  [class="", key=0];
+107 -> 783  [class="", key=0];
+107 -> 784  [class="", key=0];
+107 -> 785  [class="", key=0];
+107 -> 786  [class="", key=0];
+107 -> 787  [class="", key=0];
+112 -> 10  [class="", key=NONE, label=""];
+414 -> 112  [class="", key=NONE, label=""];
+532 -> 112  [class="", key=NONE, label=""];
+650 -> 112  [class="", key=NONE, label=""];
+759 -> 10  [class="", key=NONE, label=""];
+759 -> 788  [class="", key=0];
+759 -> 789  [class="", key=0];
+760 -> 10  [class="", key=NONE, label=""];
+763 -> "-1"  [class="", key=NONE, label=""];
+766 -> 1  [class="", key=0];
+767 -> 2  [class="", key=0];
+768 -> 2  [class="", key=0];
+769 -> 2  [class="", key=0];
+770 -> 2  [class="", key=0];
+771 -> 3  [class="", key=0];
+772 -> 3  [class="", key=0];
+773 -> 7  [class="", key=0];
+774 -> 7  [class="", key=0];
+775 -> 9  [class="", key=0];
+776 -> 107  [class="", key=0];
+777 -> 7  [class="", key=0];
+778 -> 7  [class="", key=0];
+779 -> 7  [class="", key=0];
+780 -> 7  [class="", key=0];
+781 -> 7  [class="", key=0];
+782 -> 7  [class="", key=0];
+783 -> 3  [class="", key=0];
+784 -> 2  [class="", key=0];
+785 -> 414  [class="", key=0];
+786 -> 532  [class="", key=0];
+787 -> 650  [class="", key=0];
+788 -> 760  [class="", key=0];
+789 -> 763  [class="", key=0];
+}
+`;
+    drawGraph(graph);
+  } else {
+    serveGraph();
+  }
+
+
+</script>
+</body>
+</html>
