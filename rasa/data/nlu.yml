@@ -193,6 +193,8 @@ nlu:
   examples: |
     - What is the temperature?
     - How is the temperature?
+    - How cold is it?
+    - How warm is it?
     - What is the temperature like?
     - What is the temperature outside?
     - Give me the temperature.
@@ -223,6 +225,10 @@ nlu:
     - What is the temperature like for [Munich](city)?
     - How is the temperature in [Berlin](city)?
     - How is the temperature in [Hamburg](city)?
+    - How cold is it in [London](city)?
+    - How cold is it in [Toronto](city)?
+    - How warm is it in [New York](city)?
+    - How warm is it in [Rome](city)?
     - Give me the temperature in [Paris](city).
     - Give me the temperature in [Madrid](city).
     - I want to check the temperature in [Barcelona](city).
