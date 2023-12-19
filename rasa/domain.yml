@@ -57,7 +57,6 @@ slots:
     mappings:
       - type: custom
 
-  # TODO: Implement default value and unit conversion.
   temperature_unit:
     type: text
     influence_conversation: false
@@ -143,7 +142,6 @@ responses:
   - text: "The wind speed in {mapped_location} is {wind_speed} m/s."
 
 # Form definition.
-# TODO: Add 'ignored_intents' according to https://rasa.com/docs/rasa/forms#defining-a-form
 forms:
   weather_form:
     required_slots:
