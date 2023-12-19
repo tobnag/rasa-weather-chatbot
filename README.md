@@ -2,7 +2,7 @@
 
 This project implements a weather forecast chatbot with [Rasa Open Source](https://rasa.com/docs/rasa/).
 
-The chatbot enables customers to request location-based weather information using natural language. Thereby, information like weather conditions, temperature, wind speed, etc. can be provided. User requests are answered with real weather data retrieved from [OpenWeather](https://openweathermap.org/api)'s GeoLocation and Weather APIs [(OpenWeather, 2023a; OpenWeather, 2023b)](#sources).
+The chatbot enables users to request location-based weather information using natural language. Thereby, information like weather conditions, temperature, wind speed, etc. can be provided. User requests are answered with real weather data retrieved from [OpenWeather](https://openweathermap.org/api)'s GeoLocation and Weather APIs [(OpenWeather, 2023a; OpenWeather, 2023b)](#sources).
 
 The following diagram illustrates the architecture and main components of the solution.
 
