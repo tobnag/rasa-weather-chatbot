@@ -11,55 +11,51 @@ slots:
         intent:
           - inform_location
           - ask_weather_in_location
+          - ask_temperature_in_location
+          - ask_cloudiness_in_location
+          - ask_wind_speed_in_location
 
   mapped_location:
     type: text
     influence_conversation: false
     mappings:
       - type: custom
-        action: action_request_location
 
   mapped_latitude:
     type: float
     influence_conversation: false
     mappings:
       - type: custom
-        action: action_request_location
 
   mapped_longitude:
     type: float
     influence_conversation: false
     mappings:
       - type: custom
-        action: action_request_location
 
   weather:
     type: text
     influence_conversation: false
     mappings:
       - type: custom
-        action: action_request_weather
 
   temperature:
     type: float
     influence_conversation: false
     mappings:
       - type: custom
-        action: action_request_weather
 
   cloudiness:
     type: float
     influence_conversation: false
     mappings:
       - type: custom
-        action: action_request_weather
 
   wind_speed:
     type: float
     influence_conversation: false
     mappings:
       - type: custom
-        action: action_request_weather
 
   # TODO: Implement default value and unit conversion.
   temperature_unit:
@@ -67,12 +63,11 @@ slots:
     influence_conversation: false
     mappings:
       - type: custom
-        action: action_request_weather
 
 # Action definition.
 actions:
-  - action_request_location
-  - action_request_weather
+  - validate_weather_form
+#  - request_location_and_weather
 
 # Entity definition.
 entities:
@@ -90,8 +85,11 @@ intents:
   - inform_location
   - ask_weather_in_location
   - ask_temperature
+  - ask_temperature_in_location
   - ask_cloudiness
+  - ask_cloudiness_in_location
   - ask_wind_speed
+  - ask_wind_speed_in_location
 
 # Response definition.
 responses:
@@ -122,12 +120,9 @@ responses:
   - text: "What do you want to know about the weather?"
   - text: "What can I tell you about the weather?"
 
-  utter_ask_location:
+  utter_ask_user_location:
   - text: "In which city?"
   - text: "Where?"
-
-  utter_location_mapping:
-  - text: "Your requested location {user_location} was mapped to {mapped_location}."
 
   utter_weather:
   - text: "The weather in {mapped_location} is {weather} at {temperature} {temperature_unit} and {wind_speed} m/s wind speed."
@@ -140,6 +135,29 @@ responses:
 
   utter_wind_speed:
   - text: "The wind speed in {mapped_location} is {wind_speed} m/s."
+
+# Form definition.
+# TODO: Add 'ignored_intents' according to https://rasa.com/docs/rasa/forms#defining-a-form
+forms:
+  weather_form:
+    required_slots:
+      - user_location
+      - mapped_location
+
+  temperature_form:
+    required_slots:
+      - user_location
+      - mapped_location
+
+  cloudiness_form:
+    required_slots:
+      - user_location
+      - mapped_location
+
+  wind_speed_form:
+    required_slots:
+      - user_location
+      - mapped_location
 
 # Session configuration.
 session_config:

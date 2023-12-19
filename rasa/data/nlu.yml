@@ -80,6 +80,7 @@ nlu:
     - What is the weather like?
     - I want to check the weather.
     - I'd like to know the weather.
+    - I want to know the weather.
 
 - intent: inform_location
   examples: |
@@ -195,6 +196,32 @@ nlu:
     - Can I wear a skirt?
     - Can I wear a tank top?
 
+- intent: ask_temperature_in_location
+  examples: |
+    - What is the temperature in [London](city)?
+    - What is the temperature in [Toronto](city)?
+    - What is the temperature in [New York](city)?
+    - What is the temperature like in [Rome](city)?
+    - What is the temperature like for [Munich](city)?
+    - How is the temperature in [Berlin](city)?
+    - How is the temperature in [Hamburg](city)?
+    - Give me the temperature in [Paris](city).
+    - Give me the temperature in [Madrid](city).
+    - I want to check the temperature in [Barcelona](city).
+    - I'd like to know the temperature in [Cologne](city).
+    - I want to know the temperature in [Jakarta](city).
+    - I want to know the temperature in [Delhi](city).
+    - I want to know the temperature in [Guangzhou](city).
+    - I want to know the temperature in [Mumbai](city).
+    - I want to know the temperature in [Manila](city).
+    - I want to know the temperature in [Shanghai](city).
+    - I want to know the temperature in [Seoul](city).
+    - I want to know the temperature in [Mexico City](city).
+    - I want to know the temperature in [Cairo](city).
+    - I want to know the temperature in [New York](city).
+    - I want to know the temperature in [Dhaka](city).
+    - I want to know the temperature in [Beijing](city).
+
 - intent: ask_cloudiness
   examples: |
     - Is it cloudy?
@@ -210,6 +237,32 @@ nlu:
     - Is the sky cloudy?
     - Is the sky sunny?
 
+- intent: ask_cloudiness_in_location
+  examples: |
+    - Is it cloudy in [London](city)?
+    - Is it sunny in [Toronto](city)?
+    - Are there clouds in [New York](city)?
+    - Is it cloudy outside in [Rome](city)?
+    - Is it sunny outside in [Munich](city)?
+    - How is the sky in [Berlin](city)?
+    - Can you see the sun in [Hamburg](city)?
+    - Is the sun shining in [Paris](city)?
+    - Is the sun out in [Madrid](city)?
+    - Is the sky clear in [Barcelona](city)?
+    - Is the sky cloudy in [Cologne](city)?
+    - Is the sky sunny in [Jakarta](city)?
+    - Is it cloudy in [Delhi](city)?
+    - Is it sunny in [Guangzhou](city)?
+    - Are there clouds in [Mumbai](city)?
+    - Is it cloudy outside in [Manila](city)?
+    - Is it sunny outside in [Shanghai](city)?
+    - How is the sky in [Seoul](city)?
+    - Can you see the sun in [Mexico City](city)?
+    - Is the sun shining in [Cairo](city)?
+    - Is the sun out in [New York](city)?
+    - Is the sky clear in [Dhaka](city)?
+    - Is the sky cloudy in [Beijing](city)?
+
 - intent: ask_wind_speed
   examples: |
     - Is it windy?
@@ -224,7 +277,33 @@ nlu:
     - Is there a storm?
     - How is the wind speed?
     - Tell me the wind speed.
-    - What is the wind speed?    
+    - What is the wind speed?
+
+- intent: ask_wind_speed_in_location
+  examples: |
+    - Is it windy in [London](city)?
+    - Is it breezy in [Toronto](city)?
+    - Is it stormy in [New York](city)?
+    - Is it windy outside in [Rome](city)?
+    - Is it breezy outside in [Munich](city)?
+    - How is the wind in [Berlin](city)?
+    - Is it windy today in [Hamburg](city)?
+    - Is there wind in [Paris](city)?
+    - Is there a breeze in [Madrid](city)?
+    - Is there a storm in [Barcelona](city)?
+    - How is the wind speed in [Cologne](city)?
+    - Tell me the wind speed in [Jakarta](city).
+    - What is the wind speed in [Delhi](city)?
+    - Is it windy in [Guangzhou](city)?
+    - Is it breezy in [Mumbai](city)?
+    - Is it stormy in [Manila](city)?
+    - Is it windy outside in [Shanghai](city)?
+    - Is it breezy outside in [Seoul](city)?
+    - How is the wind in [Mexico City](city)?
+    - Is there wind in [Cairo](city)?
+    - Is there a breeze in [New York](city)?
+    - Is there a storm in [Dhaka](city)?
+    - How is the wind speed in [Beijing](city)?
 
 - synonym: weather
   examples: |

@@ -2,6 +2,12 @@ version: "3.1"
 
 rules:
 
+- rule: Greet at conversation start
+  conversation_start: true
+  steps:
+  - intent: greet
+  - action: utter_greet
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
@@ -12,3 +18,79 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+# Weather form rules
+- rule: Activate weather form
+  steps:
+  - or:
+    - intent: ask_weather
+    - intent: ask_weather_in_location
+  - action: weather_form
+  - active_loop: weather_form
+
+- rule: Submit weather form
+  condition:
+  - active_loop: weather_form
+  steps:
+  - action: weather_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_weather
+
+# Temperature form rules
+- rule: Activate temperature form
+  steps:
+  - or:
+    - intent: ask_temperature
+    - intent: ask_temperature_in_location
+  - action: temperature_form
+  - active_loop: temperature_form
+
+- rule: Submit temperature form
+  condition:
+  - active_loop: temperature_form
+  steps:
+  - action: temperature_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_temperature
+
+# Cloudiness form rules
+- rule: Activate cloudiness form
+  steps:
+  - or:
+    - intent: ask_cloudiness
+    - intent: ask_cloudiness_in_location
+  - action: cloudiness_form
+  - active_loop: cloudiness_form
+
+- rule: Submit cloudiness form
+  condition:
+  - active_loop: cloudiness_form
+  steps:
+  - action: cloudiness_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_cloudiness
+
+# Wind speed form rules
+- rule: Activate wind speed form
+  steps:
+  - or:
+    - intent: ask_wind_speed
+    - intent: ask_wind_speed_in_location
+  - action: wind_speed_form
+  - active_loop: wind_speed_form
+
+- rule: Submit wind speed form
+  condition:
+  - active_loop: wind_speed_form
+  steps:
+  - action: wind_speed_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_wind_speed
