@@ -145,3 +145,18 @@ class LocationDependentForm(FormValidationAction, ABC):
 class ValidateWeatherForm(LocationDependentForm):
     def name(self) -> Text:
         return "validate_weather_form"
+
+
+class ValidateTemperatureForm(LocationDependentForm):
+    def name(self) -> Text:
+        return "validate_temperature_form"
+    
+
+class ValidateCloudinessForm(LocationDependentForm):
+    def name(self) -> Text:
+        return "validate_cloudiness_form"
+    
+
+class ValidateWindSpeedForm(LocationDependentForm):
+    def name(self) -> Text:
+        return "validate_wind_speed_form"

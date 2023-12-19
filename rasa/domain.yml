@@ -67,7 +67,9 @@ slots:
 # Action definition.
 actions:
   - validate_weather_form
-#  - request_location_and_weather
+  - validate_temperature_form
+  - validate_cloudiness_form
+  - validate_wind_speed_form
 
 # Entity definition.
 entities:
@@ -80,6 +82,7 @@ intents:
   - affirm
   - deny
   - bot_challenge
+  - what_can_you_do
   - thanks
   - ask_weather
   - inform_location
@@ -102,6 +105,10 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+  utter_explain:
+  - text: "I can tell you the weather in a city. What do you want to know?"
+  - text: "I am a weather chatbot. What do you want to know about the weather?"
+  
   utter_welcome:
   - text: "You are welcome!"
 
@@ -116,7 +123,6 @@ responses:
   - text: "Do you want to know anything else?"
 
   utter_opener:
-  - text: "I can tell you the weather in a city. What do you want to know?"
   - text: "What do you want to know about the weather?"
   - text: "What can I tell you about the weather?"
 

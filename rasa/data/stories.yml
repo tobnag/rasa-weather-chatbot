@@ -3,7 +3,7 @@ version: "3.1"
 stories:
 
 # Weather stories
-- story: weather_story_location_given
+- story: weather story with given location
   steps:
   - intent: ask_weather
   - action: weather_form
@@ -11,8 +11,9 @@ stories:
     - requested_slot: null
   - active_loop: null
   - action: utter_weather
+  - checkpoint: story_complete
 
-- story: weather_story_short
+- story: short weather story
   steps:
   - intent: ask_weather_in_location
     entities:
@@ -43,8 +44,9 @@ stories:
     - requested_slot: null
   - active_loop: null
   - action: utter_weather
+  - checkpoint: story_complete
 
-- story: weather_story_long
+- story: long weather story
   steps:
   - intent: ask_weather
   - action: weather_form
@@ -79,3 +81,237 @@ stories:
     - requested_slot: null
   - active_loop: null
   - action: utter_weather
+  - checkpoint: story_complete
+
+# Temperature stories
+- story: temperature story with given location
+  steps:
+  - intent: ask_temperature
+  - action: temperature_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_temperature
+  - checkpoint: story_complete
+
+- story: short temperature story
+  steps:
+  - intent: ask_temperature_in_location
+    entities:
+    - city: London
+  - slot_was_set:
+    - user_location: London
+  - action: temperature_form
+  - active_loop: temperature_form
+  - slot_was_set:
+    - user_location: London
+  - slot_was_set:
+    - mapped_location: London (GB, England)
+  - slot_was_set:
+    - mapped_latitude: 51.5073219
+  - slot_was_set:
+    - mapped_longitude: -0.1276474
+  - slot_was_set:
+    - temperature: 8.36
+  - slot_was_set:
+    - temperature_unit: °C
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_temperature
+  - checkpoint: story_complete
+
+- story: long temperature story
+  steps:
+  - intent: ask_temperature
+  - action: temperature_form
+  - active_loop: temperature_form
+  - slot_was_set:
+    - requested_slot: user_location
+  - intent: inform_location
+    entities:
+    - city: Berlin
+  - slot_was_set:
+    - user_location: Berlin
+  - action: temperature_form
+  - slot_was_set:
+    - user_location: Berlin
+  - slot_was_set:
+    - mapped_location: Berlin (DE)
+  - slot_was_set:
+    - mapped_latitude: 52.5170365
+  - slot_was_set:
+    - mapped_longitude: 13.3888599
+  - slot_was_set:
+    - temperature: 6.62
+  - slot_was_set:
+    - temperature_unit: °C
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_temperature
+  - checkpoint: story_complete
+
+# Cloudiness stories
+- story: cloudiness story with given location
+  steps:
+  - intent: ask_cloudiness
+  - action: cloudiness_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_cloudiness
+  - checkpoint: story_complete
+
+- story: short cloudiness story
+  steps:
+  - intent: ask_cloudiness_in_location
+    entities:
+    - city: London
+  - slot_was_set:
+    - user_location: London
+  - action: cloudiness_form
+  - active_loop: cloudiness_form
+  - slot_was_set:
+    - user_location: London
+  - slot_was_set:
+    - mapped_location: London (GB, England)
+  - slot_was_set:
+    - mapped_latitude: 51.5073219
+  - slot_was_set:
+    - mapped_longitude: -0.1276474
+  - slot_was_set:
+    - cloudiness: 100
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_cloudiness
+  - checkpoint: story_complete
+
+- story: long cloudiness story
+  steps:
+  - intent: ask_cloudiness
+  - action: cloudiness_form
+  - active_loop: cloudiness_form
+  - slot_was_set:
+    - requested_slot: user_location
+  - intent: inform_location
+    entities:
+    - city: Berlin
+  - slot_was_set:
+    - user_location: Berlin
+  - action: cloudiness_form
+  - slot_was_set:
+    - user_location: Berlin
+  - slot_was_set:
+    - mapped_location: Berlin (DE)
+  - slot_was_set:
+    - mapped_latitude: 52.5170365
+  - slot_was_set:
+    - mapped_longitude: 13.3888599
+  - slot_was_set:
+    - cloudiness: 100
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_cloudiness
+  - checkpoint: story_complete
+
+# Wind speed stories
+- story: wind speed story with given location
+  steps:
+  - intent: ask_wind_speed
+  - action: wind_speed_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_wind_speed
+  - checkpoint: story_complete
+
+- story: short wind speed story
+  steps:
+  - intent: ask_wind_speed_in_location
+    entities:
+    - city: London
+  - slot_was_set:
+    - user_location: London
+  - action: wind_speed_form
+  - active_loop: wind_speed_form
+  - slot_was_set:
+    - user_location: London
+  - slot_was_set:
+    - mapped_location: London (GB, England)
+  - slot_was_set:
+    - mapped_latitude: 51.5073219
+  - slot_was_set:
+    - mapped_longitude: -0.1276474
+  - slot_was_set:
+    - wind_speed: 1.79
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_wind_speed
+  - checkpoint: story_complete
+
+- story: long wind speed story
+  steps:
+  - intent: ask_wind_speed
+  - action: wind_speed_form
+  - active_loop: wind_speed_form
+  - slot_was_set:
+    - requested_slot: user_location
+  - intent: inform_location
+    entities:
+    - city: Berlin
+  - slot_was_set:
+    - user_location: Berlin
+  - action: wind_speed_form
+  - slot_was_set:
+    - user_location: Berlin
+  - slot_was_set:
+    - mapped_location: Berlin (DE)
+  - slot_was_set:
+    - mapped_latitude: 52.5170365
+  - slot_was_set:
+    - mapped_longitude: 13.3888599
+  - slot_was_set:
+    - wind_speed: 7.6
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_wind_speed
+  - checkpoint: story_complete
+
+# If the user thanks or affirms, the user is asked for mor assistance.
+- story: ask for more assistance
+  steps:
+  - checkpoint: story_complete
+  - or:
+    - intent: affirm
+    - intent: thanks
+  - action: utter_welcome
+  - action: utter_anything_else
+  - checkpoint: anything_else
+
+# If the user accepts, another round can be started.
+- story: accept anything else
+  steps:
+  - checkpoint: anything_else
+  - intent: affirm
+  - action: utter_opener
+
+# If the user denies, the conversation is ended.
+- story: deny anything else
+  steps:
+  - checkpoint: anything_else
+  - intent: deny
+  - action: utter_no_problem
+
+# Conversation closures
+- story: nothing more after completion
+  steps:
+  - checkpoint: story_complete
+
+- story: nothing more after anything else
+  steps:
+  - checkpoint: anything_else

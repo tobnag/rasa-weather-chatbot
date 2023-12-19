@@ -62,6 +62,24 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
 
+- intent: what_can_you_do
+  examples: |
+    - what are you?
+    - who are you?
+    - what is your name?
+    - What can you do?
+    - What are your features?
+    - What are your capabilities?
+    - What are your skills?
+    - What are your abilities?
+    - What are your functions?
+    - What are your talents?
+    - What can you do for me?
+    - Tell me about yourself.
+    - Tell me about you.
+    - Tell me what you can do.
+    - Tell me what can you do for me.
+
 - intent: thanks
   examples: |
     - thanks
