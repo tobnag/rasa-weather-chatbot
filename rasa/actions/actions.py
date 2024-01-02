@@ -34,6 +34,7 @@ class Slots(str, Enum):
     TEMPERATURE = 'temperature'
     CLOUDINESS = 'cloudiness'
     WIND_SPEED = 'wind_speed'
+    HUMIDITY = 'humidity'
     TEMPERATURE_UNIT = 'temperature_unit'
 
     def reset_slots() -> Dict[Text, Any]:
@@ -149,6 +150,7 @@ class LocationDependentForm(FormValidationAction, ABC):
                 Slots.TEMPERATURE: data['main']['temp'],
                 Slots.CLOUDINESS: data['clouds']['all'],
                 Slots.WIND_SPEED: data['wind']['speed'],
+                Slots.HUMIDITY: data['main']['humidity'],
                 Slots.TEMPERATURE_UNIT: const.TEMPERATURE_UNIT,
             }
         else:
@@ -279,3 +281,14 @@ class ValidateWindSpeedForm(LocationDependentForm):
     def name(self) -> Text:
         """Returns the name of the form for identification of Rasa Core."""
         return "validate_wind_speed_form"
+    
+
+class ValidateHumidityForm(LocationDependentForm):
+    """
+    Child class of LocationDependentForm for validating the humidity form.
+
+    The methods for validating location data are inherited from the parent class.
+    """
+    def name(self) -> Text:
+        """Returns the name of the form for identification of Rasa Core."""
+        return "validate_humidity_form"

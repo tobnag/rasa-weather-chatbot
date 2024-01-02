@@ -329,6 +329,51 @@ nlu:
     - Is there a storm in [Dhaka](city)?
     - How is the wind speed in [Beijing](city)?
 
+- intent: ask_humidity
+  examples: |
+    - Is it humid?
+    - Is it dry?
+    - Is it humid outside?
+    - Is it dry outside?
+    - How is the humidity?
+    - Is it humid today?
+    - Is it dry today?
+    - How is the humidity level?
+    - Tell me the humidity.
+    - What is the humidity?
+    - How is the air humidity?
+    - Tell me the air humidity.
+    - What is the air humidity?
+    - How is the air moisture?
+    - Tell me the air moisture.
+    - What is the air moisture?
+    - How is the ambient humidity?
+    - Tell me the ambient humidity.
+    - What is the ambient humidity?
+
+- intent: ask_humidity_in_location
+  examples: |
+    - Is it humid in [London](city)?
+    - Is it dry in [Toronto](city)?
+    - Is it humid outside in [New York](city)?
+    - Is it dry outside in [Rome](city)?
+    - How is the humidity in [Munich](city)?
+    - Is it humid today in [Berlin](city)?
+    - Is it dry today in [Hamburg](city)?
+    - How is the humidity level in [Paris](city)?
+    - Tell me the humidity in [Madrid](city).
+    - What is the humidity in [Barcelona](city)?
+    - How is the air humidity in [Cologne](city)?
+    - Tell me the air humidity in [Jakarta](city).
+    - What is the air humidity in [Delhi](city)?
+    - How is the air moisture in [Guangzhou](city)?
+    - Tell me the air moisture in [Mumbai](city).
+    - What is the air moisture in [Manila](city)?
+    - How is the ambient humidity in [Shanghai](city)?
+    - Tell me the ambient humidity in [Seoul](city).
+    - What is the ambient humidity in [Mexico City](city)?
+    - How is the humidity in [Cairo](city)?
+
 - synonym: weather
   examples: |
     - weather conditions
