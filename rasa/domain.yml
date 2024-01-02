@@ -15,6 +15,7 @@ slots:
           - ask_cloudiness_in_location
           - ask_wind_speed_in_location
           - ask_humidity_in_location
+          - ask_forecast_in_location
 
   mapped_location:
     type: text
@@ -64,6 +65,12 @@ slots:
     mappings:
       - type: custom
 
+  forecast:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
   temperature_unit:
     type: text
     influence_conversation: false
@@ -77,6 +84,7 @@ actions:
   - validate_cloudiness_form
   - validate_wind_speed_form
   - validate_humidity_form
+  - validate_forecast_form
 
 # Entity definition.
 entities:
@@ -102,6 +110,8 @@ intents:
   - ask_wind_speed_in_location
   - ask_humidity
   - ask_humidity_in_location
+  - ask_forecast
+  - ask_forecast_in_location
 
 # Response definition.
 responses:
@@ -154,6 +164,9 @@ responses:
   utter_humidity:
   - text: "The humidity in {mapped_location} is {humidity}%."
 
+  utter_forecast:
+  - text: "{forecast}"
+
 # Form definition.
 forms:
   weather_form:
@@ -177,6 +190,11 @@ forms:
       - mapped_location
 
   humidity_form:
+    required_slots:
+      - user_location
+      - mapped_location
+
+  forecast_form:
     required_slots:
       - user_location
       - mapped_location

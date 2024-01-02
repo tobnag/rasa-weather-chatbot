@@ -374,8 +374,35 @@ nlu:
     - What is the ambient humidity in [Mexico City](city)?
     - How is the humidity in [Cairo](city)?
 
+- intent: ask_forecast
+  examples: |
+    - What is the forecast?
+    - Give me the forecast.
+    - I want to check the forecast.
+    - I'd like to know the forecast.
+    - Tell me the forecast.
+
+- intent: ask_forecast_in_location
+  examples: |
+    - What is the forecast in [London](city)?
+    - What is the forecast in [Toronto](city)?
+    - What is the forecast in [New York](city)?
+    - Give me the forecast in [Rome](city).
+    - I want to check the forecast in [Munich](city).
+    - I'd like to know the forecast in [Berlin](city).
+    - Tell me the forecast in [Hamburg](city).
+
 - synonym: weather
   examples: |
     - weather conditions
     - conditions
     - condition
+
+- synonym: forecast
+  examples: |
+    - weather forecast
+    - forecast
+    - weather prediction
+    - prediction
+    - weather outlook
+    - outlook

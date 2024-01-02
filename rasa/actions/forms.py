@@ -1,6 +1,7 @@
 from typing import Any, Text, Dict, List
 
 import requests
+import datetime
 from . import const
 from . import config
 from abc import ABC, abstractmethod
@@ -30,6 +31,7 @@ class Slots(str, Enum):
     WIND_SPEED = 'wind_speed'
     HUMIDITY = 'humidity'
     TEMPERATURE_UNIT = 'temperature_unit'
+    FORECAST = 'forecast'
 
     def reset_slots() -> Dict[Text, Any]:
         """
@@ -60,6 +62,9 @@ class LocationDependentForm(FormValidationAction, ABC):
 
         request_weather(self, location: Dict[Text, Any]) -> Dict[Text, Any]:
             Retrieves weather information for the mapped location with an API call.
+
+        request_forecast(self, location: Dict[Text, Any]) -> Dict[Text, Any]:
+            Retrieves weather forecast information for the mapped location with an API call.
 
         run_queries(self, dispatcher: CollectingDispatcher, tracker: Tracker) -> List[Dict[Text, Any]]:
             Runs the location and weather API queries and returns joined results.
@@ -152,6 +157,56 @@ class LocationDependentForm(FormValidationAction, ABC):
                                with the response code {response.status_code}: '{response.json()['message']}'.""")
         return results
 
+    def request_forecast(self, location: Dict[Text, Any]) -> Dict[Text, Any]:
+        """
+        Retrieves weather forecast information for the mapped location with an API call.
+
+        Args:
+            location (Dict[Text, Any]): A dictionary containing the mapped location, latitude, and longitude.
+
+        Returns:
+            Dict[Text, Any]: A dictionary containing weather information such as description, temperature, cloudiness, etc.
+        """
+        params = {
+            'lat': location[Slots.MAPPED_LATITUDE],
+            'lon': location[Slots.MAPPED_LONGITUDE],
+            'cnt': 18,
+            'units': const.UNITS,
+            'appid': config.OPEN_WEATHER_API_KEY
+        }
+        response = requests.get(
+            const.FORECAST_API,
+            params=params
+        )
+        results = {}
+        if response.status_code == 200:
+            data = response.json()
+            # Get the forecast for tomorrow noon
+            current_date = datetime.date.today()
+            tomorrow_noon = datetime.datetime.combine(current_date + datetime.timedelta(days=1), datetime.time(12, 0))
+            tomorrow_noon_str = tomorrow_noon.strftime("%Y-%m-%d %H:%M:%S")
+            tomorrow_noon_weather = [e for e in data['list'] if e['dt_txt'] == tomorrow_noon_str][0]
+            if tomorrow_noon_weather:
+                # Create the forecast string
+                mapped_location = location[Slots.MAPPED_LOCATION]
+                weather = tomorrow_noon_weather['weather'][0]['description']
+                temperature = tomorrow_noon_weather['main']['temp']
+                temperature_unit = const.TEMPERATURE_UNIT
+                wind_speed = tomorrow_noon_weather['wind']['speed']
+                forecast = (
+                    f"Tomorrow, the weather in {mapped_location} will be {weather} at "
+                    f"{temperature:.0f} {temperature_unit} and {wind_speed:.0f} m/s wind speed."
+                )
+                results = {
+                    Slots.FORECAST: forecast
+                }
+            else:
+                raise RuntimeError(f"""Unfortunately, I could not find the forecast for tomorrow noon.""")
+        else:
+            raise RuntimeError(f"""Unfortunately, my call to the weather API failed
+                               with the response code {response.status_code}: '{response.json()['message']}'.""")
+        return results
+
     def run_queries(self, 
                     dispatcher: CollectingDispatcher,
                     tracker: Tracker
@@ -170,7 +225,8 @@ class LocationDependentForm(FormValidationAction, ABC):
             user_location = tracker.get_slot(Slots.USER_LOCATION)
             location_results = self.request_location(tracker)
             weather_results = self.request_weather(location_results)
-            slots = location_results | weather_results
+            forecast_results = self.request_forecast(location_results)
+            slots = location_results | weather_results | forecast_results
             dispatcher.utter_message(
                 text=f"Your requested location {user_location} was mapped to {slots[Slots.MAPPED_LOCATION]}."
             )

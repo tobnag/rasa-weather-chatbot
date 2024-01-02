@@ -62,3 +62,13 @@ class ValidateHumidityForm(LocationDependentForm):
     def name(self) -> Text:
         """Returns the name of the form for identification of Rasa Core."""
         return "validate_humidity_form"
+    
+class ValidateForecastForm(LocationDependentForm):
+    """
+    Child class of LocationDependentForm for validating the forecast form.
+
+    The methods for validating location data are inherited from the parent class.
+    """
+    def name(self) -> Text:
+        """Returns the name of the form for identification of Rasa Core."""
+        return "validate_forecast_form"

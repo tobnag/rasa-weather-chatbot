@@ -43,6 +43,8 @@ stories:
   - slot_was_set:
     - temperature_unit: °C
   - slot_was_set:
+    - forecast: Tomorrow, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+  - slot_was_set:
     - requested_slot: null
   - active_loop: null
   - action: utter_weather
@@ -81,6 +83,8 @@ stories:
     - humidity: 91
   - slot_was_set:
     - temperature_unit: °C
+  - slot_was_set:
+    - forecast: Tomorrow, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
@@ -128,6 +132,8 @@ stories:
   - slot_was_set:
     - temperature_unit: °C
   - slot_was_set:
+    - forecast: Tomorrow, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+  - slot_was_set:
     - requested_slot: null
   - active_loop: null
   - action: utter_temperature
@@ -166,6 +172,8 @@ stories:
     - humidity: 91
   - slot_was_set:
     - temperature_unit: °C
+  - slot_was_set:
+    - forecast: Tomorrow, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
@@ -214,6 +222,8 @@ stories:
     - temperature_unit: °C
   - slot_was_set:
     - requested_slot: null
+  - slot_was_set:
+    - forecast: Tomorrow, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
   - active_loop: null
   - action: utter_cloudiness
   - checkpoint: story_complete
@@ -251,6 +261,8 @@ stories:
     - humidity: 91
   - slot_was_set:
     - temperature_unit: °C
+  - slot_was_set:
+    - forecast: Tomorrow, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
@@ -298,6 +310,8 @@ stories:
   - slot_was_set:
     - temperature_unit: °C
   - slot_was_set:
+    - forecast: Tomorrow, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+  - slot_was_set:
     - requested_slot: null
   - active_loop: null
   - action: utter_wind_speed
@@ -336,6 +350,8 @@ stories:
     - humidity: 91
   - slot_was_set:
     - temperature_unit: °C
+  - slot_was_set:
+    - forecast: Tomorrow, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
@@ -383,6 +399,8 @@ stories:
   - slot_was_set:
     - temperature_unit: °C
   - slot_was_set:
+    - forecast: Tomorrow, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+  - slot_was_set:
     - requested_slot: null
   - active_loop: null
   - action: utter_humidity
@@ -422,9 +440,100 @@ stories:
   - slot_was_set:
     - temperature_unit: °C
   - slot_was_set:
+    - forecast: Tomorrow, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+  - slot_was_set:
     - requested_slot: null
   - active_loop: null
   - action: utter_humidity
+  - checkpoint: story_complete
+
+# Forecast stories
+- story: forecast story with given location
+  steps:
+  - intent: ask_forecast
+  - action: forecast_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_forecast
+  - checkpoint: story_complete
+
+- story: short forecast story
+  steps:
+  - intent: ask_forecast_in_location
+    entities:
+    - city: London
+  - slot_was_set:
+    - user_location: London
+  - action: forecast_form
+  - active_loop: forecast_form
+  - slot_was_set:
+    - user_location: London
+  - slot_was_set:
+    - mapped_location: London (GB, England)
+  - slot_was_set:
+    - mapped_latitude: 51.5073219
+  - slot_was_set:
+    - mapped_longitude: -0.1276474
+  - slot_was_set:
+    - weather: overcast clouds
+  - slot_was_set:
+    - temperature: 8.36
+  - slot_was_set:
+    - cloudiness: 100
+  - slot_was_set:
+    - wind_speed: 1.79
+  - slot_was_set:
+    - humidity: 91
+  - slot_was_set:
+    - temperature_unit: °C
+  - slot_was_set:
+    - forecast: Tomorrow, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_forecast
+  - checkpoint: story_complete
+
+- story: long forecast story
+  steps:
+  - intent: ask_forecast
+  - action: forecast_form
+  - active_loop: forecast_form
+  - slot_was_set:
+    - requested_slot: user_location
+  - intent: inform_location
+    entities:
+    - city: Berlin
+  - slot_was_set:
+    - user_location: Berlin
+  - action: forecast_form
+  - slot_was_set:
+    - user_location: Berlin
+  - slot_was_set:
+    - mapped_location: Berlin (DE)
+  - slot_was_set:
+    - mapped_latitude: 52.5170365
+  - slot_was_set:
+    - mapped_longitude: 13.3888599
+  - slot_was_set:
+    - weather: light rain
+  - slot_was_set:
+    - temperature: 6.62
+  - slot_was_set:
+    - cloudiness: 100
+  - slot_was_set:
+    - wind_speed: 7.6
+  - slot_was_set:
+    - humidity: 91
+  - slot_was_set:
+    - temperature_unit: °C
+  - slot_was_set:
+    - forecast: Tomorrow, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_forecast
   - checkpoint: story_complete
 
 # If the user thanks or affirms, the user is asked for mor assistance.
