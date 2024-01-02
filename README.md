@@ -79,7 +79,7 @@ The following limitations apply to this project:
 The following sources were used to create this project:
 - OpenWeather. (2023a). *Geocoding API*. https://openweathermap.org/api/geocoding-api.
 - OpenWeather. (2023b). *Current weather data*. https://openweathermap.org/current.
-- OpenWeather. (2023c). *Daily forecast 16 days*. https://openweathermap.org/forecast16.
+- OpenWeather. (2023c). *5 day weather forecast*. https://openweathermap.org/forecast5.
 - SimpleMaps. (2023). *World Cities Database*. https://simplemaps.com/data/world-cities.
 
 ## License
