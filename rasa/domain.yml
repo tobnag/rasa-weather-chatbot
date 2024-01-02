@@ -124,6 +124,9 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+  utter_fallback:
+  - text: "Sorry, I didn't understand that. Can you please rephrase?"
+
   utter_explain:
   - text: "I can tell you the weather in a city. What do you want to know?"
   - text: "I am a weather chatbot. What do you want to know about the weather?"

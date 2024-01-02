@@ -25,6 +25,11 @@ rules:
   - intent: what_can_you_do
   - action: utter_explain
 
+- rule: Fallback
+  steps:
+  - intent: nlu_fallback
+  - action: utter_fallback
+
 # Weather form rules
 - rule: Activate weather form
   steps:
