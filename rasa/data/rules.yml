@@ -105,3 +105,117 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: utter_wind_speed
+
+# Humidity form rules
+- rule: Activate humidity form
+  steps:
+  - or:
+    - intent: ask_humidity
+    - intent: ask_humidity_in_location
+  - action: humidity_form
+  - active_loop: humidity_form
+
+- rule: Submit humidity form
+  condition:
+  - active_loop: humidity_form
+  steps:
+  - action: humidity_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_humidity
+
+# Forecast form rules
+- rule: Activate forecast form
+  steps:
+  - or:
+    - intent: ask_forecast
+    - intent: ask_forecast_in_location
+  - action: forecast_form
+  - active_loop: forecast_form
+
+- rule: Submit forecast form
+  condition:
+  - active_loop: forecast_form
+  steps:
+  - action: forecast_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_forecast
+
+# Rain form rules
+- rule: Activate rain form
+  steps:
+  - or:
+    - intent: ask_rain
+    - intent: ask_rain_in_location
+  - action: rain_form
+  - active_loop: rain_form
+
+- rule: Submit rain form
+  condition:
+  - active_loop: rain_form
+  steps:
+  - action: rain_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_rain
+
+# Snow form rules
+- rule: Activate snow form
+  steps:
+  - or:
+    - intent: ask_snow
+    - intent: ask_snow_in_location
+  - action: snow_form
+  - active_loop: snow_form
+
+- rule: Submit snow form
+  condition:
+  - active_loop: snow_form
+  steps:
+  - action: snow_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_snow
+
+# Rain forecast form rules
+- rule: Activate rain forecast form
+  steps:
+  - or:
+    - intent: ask_rain_forecast
+    - intent: ask_rain_forecast_in_location
+  - action: rain_forecast_form
+  - active_loop: rain_forecast_form
+
+- rule: Submit rain forecast form
+  condition:
+  - active_loop: rain_forecast_form
+  steps:
+  - action: rain_forecast_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_rain_forecast
+
+# Snow forecast form rules
+- rule: Activate snow forecast form
+  steps:
+  - or:
+    - intent: ask_snow_forecast
+    - intent: ask_snow_forecast_in_location
+  - action: snow_forecast_form
+  - active_loop: snow_forecast_form
+
+- rule: Submit snow forecast form
+  condition:
+  - active_loop: snow_forecast_form
+  steps:
+  - action: snow_forecast_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_snow_forecast

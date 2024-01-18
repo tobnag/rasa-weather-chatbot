@@ -32,6 +32,10 @@ class Slots(str, Enum):
     HUMIDITY = 'humidity'
     TEMPERATURE_UNIT = 'temperature_unit'
     FORECAST = 'forecast'
+    RAIN = 'rain'
+    SNOW = 'snow'
+    RAIN_FORECAST = 'rain_forecast'
+    SNOW_FORECAST = 'snow_forecast'
 
     def reset_slots() -> Dict[Text, Any]:
         """
@@ -144,12 +148,28 @@ class LocationDependentForm(FormValidationAction, ABC):
         results = {}
         if response.status_code == 200:
             data = response.json()
+            # Check for rain
+            mapped_location = location[Slots.MAPPED_LOCATION]
+            main_category = data['weather'][0]['main']
+            if main_category == 'Rain':
+                rain_description = data['weather'][0]['description']
+                rain = f"There is {rain_description} in {mapped_location}."
+            else:
+                rain = f"There is no rain in {mapped_location}."
+            # Check for snow
+            if main_category == 'Snow':
+                snow_description = data['weather'][0]['description']
+                snow = f"There is {snow_description} in {mapped_location}."
+            else:
+                snow = f"There is no snow in {mapped_location}."
             results = {
                 Slots.WEATHER: data['weather'][0]['description'],
                 Slots.TEMPERATURE: data['main']['temp'],
                 Slots.CLOUDINESS: data['clouds']['all'],
                 Slots.WIND_SPEED: data['wind']['speed'],
                 Slots.HUMIDITY: data['main']['humidity'],
+                Slots.RAIN: rain,
+                Slots.SNOW: snow,
                 Slots.TEMPERATURE_UNIT: const.TEMPERATURE_UNIT,
             }
         else:
@@ -193,12 +213,27 @@ class LocationDependentForm(FormValidationAction, ABC):
                 temperature = tomorrow_noon_weather['main']['temp']
                 temperature_unit = const.TEMPERATURE_UNIT
                 wind_speed = tomorrow_noon_weather['wind']['speed']
+                # Rain forecast
+                main_category = tomorrow_noon_weather['weather'][0]['main']
+                if main_category == 'Rain':
+                    rain_description = tomorrow_noon_weather['weather'][0]['description']
+                    rain_forecast = f"Tomorrow noon, there will be {rain_description} in {mapped_location}."
+                else:
+                    rain_forecast = f"Tomorrow noon, there will be no rain in {mapped_location}."
+                # Snow forecast
+                if main_category == 'Snow':
+                    snow_description = tomorrow_noon_weather['weather'][0]['description']
+                    snow_forecast = f"Tomorrow noon, there will be {snow_description} in {mapped_location}."
+                else:
+                    snow_forecast = f"Tomorrow noon, there will be no snow in {mapped_location}."
                 forecast = (
-                    f"Tomorrow, the weather in {mapped_location} will be {weather} at "
+                    f"Tomorrow noon, the weather in {mapped_location} will be {weather} at "
                     f"{temperature:.0f} {temperature_unit} and {wind_speed:.0f} m/s wind speed."
                 )
                 results = {
-                    Slots.FORECAST: forecast
+                    Slots.FORECAST: forecast,
+                    Slots.RAIN_FORECAST: rain_forecast,
+                    Slots.SNOW_FORECAST: snow_forecast
                 }
             else:
                 raise RuntimeError(f"""Unfortunately, I could not find the forecast for tomorrow noon.""")

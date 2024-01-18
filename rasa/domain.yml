@@ -16,6 +16,10 @@ slots:
           - ask_wind_speed_in_location
           - ask_humidity_in_location
           - ask_forecast_in_location
+          - ask_rain_in_location
+          - ask_snow_in_location
+          - ask_rain_forecast_in_location
+          - ask_snow_forecast_in_location
 
   mapped_location:
     type: text
@@ -71,6 +75,30 @@ slots:
     mappings:
       - type: custom
 
+  rain:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  snow:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  rain_forecast:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  snow_forecast:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
   temperature_unit:
     type: text
     influence_conversation: false
@@ -85,6 +113,10 @@ actions:
   - validate_wind_speed_form
   - validate_humidity_form
   - validate_forecast_form
+  - validate_rain_form
+  - validate_snow_form
+  - validate_rain_forecast_form
+  - validate_snow_forecast_form
 
 # Entity definition.
 entities:
@@ -112,6 +144,14 @@ intents:
   - ask_humidity_in_location
   - ask_forecast
   - ask_forecast_in_location
+  - ask_rain
+  - ask_rain_in_location
+  - ask_snow
+  - ask_snow_in_location
+  - ask_rain_forecast
+  - ask_rain_forecast_in_location
+  - ask_snow_forecast
+  - ask_snow_forecast_in_location
 
 # Response definition.
 responses:
@@ -170,6 +210,18 @@ responses:
   utter_forecast:
   - text: "{forecast}"
 
+  utter_rain:
+  - text: "{rain}"
+
+  utter_snow:
+  - text: "{snow}"
+
+  utter_rain_forecast:
+  - text: "{rain_forecast}"
+
+  utter_snow_forecast:
+  - text: "{snow_forecast}"
+
 # Form definition.
 forms:
   weather_form:
@@ -198,6 +250,26 @@ forms:
       - mapped_location
 
   forecast_form:
+    required_slots:
+      - user_location
+      - mapped_location
+
+  rain_form:
+    required_slots:
+      - user_location
+      - mapped_location
+
+  snow_form:
+    required_slots:
+      - user_location
+      - mapped_location
+
+  rain_forecast_form:
+    required_slots:
+      - user_location
+      - mapped_location
+
+  snow_forecast_form:
     required_slots:
       - user_location
       - mapped_location

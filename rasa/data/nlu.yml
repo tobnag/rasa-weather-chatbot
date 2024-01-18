@@ -392,6 +392,192 @@ nlu:
     - I'd like to know the forecast in [Berlin](city).
     - Tell me the forecast in [Hamburg](city).
 
+- intent: ask_rain
+  examples: |
+    - Is it raining?
+    - Is it raining outside?
+    - Is it raining today?
+    - Is it raining right now?
+    - Does it rain?
+    - Does it rain outside?
+    - Is there rain?
+    - Is there rain outside?
+    - Is it drizzling?
+    - Is it drizzling outside?
+    - Do I need an umbrella?
+    - Do I need a raincoat?
+    - Do I need a rain jacket?
+
+- intent: ask_rain_in_location
+  examples: |
+    - Is it raining in [London](city)?
+    - Is it raining in [Toronto](city)?
+    - Is it raining in [New York](city)?
+    - Does it raining in [Rome](city)?
+    - Does it raining in [Munich](city)?
+    - Is there rain in [Berlin](city)?
+    - Is there rain in [Hamburg](city)?
+    - Is it drizzling in [Paris](city)?
+    - Is it drizzling in [Madrid](city)?
+    - Is it drizzling in [Barcelona](city)?
+    - Is it drizzling in [Cologne](city)?
+    - Do I need an umbrella in [Jakarta](city)?
+    - Do I need an umbrella in [Delhi](city)?
+    - Do I need an umbrella in [Guangzhou](city)?
+    - Do I need a raincoat in [Mumbai](city)?
+    - Do I need a raincoat in [Manila](city)?
+    - Do I need a raincoat in [Shanghai](city)?
+    - Do I need a rain jacket in [Seoul](city)?
+    - Do I need a rain jacket in [Mexico City](city)?
+    - Do I need a rain jacket in [Cairo](city)?
+
+- intent: ask_snow
+  examples: |
+    - Is it snowing?
+    - Is it snowing outside?
+    - Is it snowing today?
+    - Is it snowing right now?
+    - Does it snow?
+    - Does it snow outside?
+    - Is there snow?
+    - Is there snow outside?
+    - Do I need a snow jacket?
+    - Do I need a snow coat?
+    - Do I need a snowsuit?
+    - Do I need snow boots?
+    - Can I build a snowman?
+
+- intent: ask_snow_in_location
+  examples: |
+    - Is it snowing in [London](city)?
+    - Is it snowing in [Toronto](city)?
+    - Is it snowing in [New York](city)?
+    - Does it snow in [Rome](city)?
+    - Does it snow in [Munich](city)?
+    - Is there snow in [Berlin](city)?
+    - Is there snow in [Hamburg](city)?
+    - Do I need a snow jacket in [Paris](city)?
+    - Do I need a snow jacket in [Madrid](city)?
+    - Do I need a snow jacket in [Barcelona](city)?
+    - Do I need a snow coat in [Cologne](city)?
+    - Do I need a snow coat in [Jakarta](city)?
+    - Do I need a snow coat in [Delhi](city)?
+    - Do I need a snow coat in [Guangzhou](city)?
+    - Do I need a snowsuit in [Mumbai](city)?
+    - Do I need a snowsuit in [Manila](city)?
+    - Do I need a snowsuit in [Shanghai](city)?
+    - Do I need snow boots in [Seoul](city)?
+    - Do I need snow boots in [Mexico City](city)?
+    - Do I need snow boots in [Cairo](city)?
+
+- intent: ask_rain_forecast
+  examples: |
+    - Is it going to rain?
+    - Is it going to rain tomorrow?
+    - Will it rain?
+    - Will it rain tomorrow?
+    - What is the rain forecast?
+    - What is the rain forecast for tomorrow?
+    - Tell me the rain forecast.
+    - Tell me the rain forecast for tomorrow.
+    - Give me the rain forecast.
+    - Give me the rain forecast for tomorrow.
+    - I want to check the rain forecast.
+    - I want to check the rain forecast for tomorrow.
+    - I'd like to know the rain forecast.
+    - I'd like to know the rain forecast for tomorrow.
+    - Do I need an umbrella tomorrow?
+    - Do I need a raincoat tomorrow?
+    - Do I need a rain jacket tomorrow?
+    - Will I need an umbrella tomorrow?
+    - Will I need a raincoat tomorrow?
+    - Will I need a rain jacket tomorrow?
+
+- intent: ask_rain_forecast_in_location
+  examples: |
+    - Is it going to rain in [London](city)?
+    - Is it going to rain in [Toronto](city)?
+    - Is it going to rain in [New York](city)?
+    - Is it going to rain in [Rome](city)?
+    - Will it rain in [Munich](city)?
+    - Will it rain in [Berlin](city)?
+    - Will it rain in [Hamburg](city)?
+    - What is the rain forecast in [Paris](city)?
+    - What is the rain forecast in [Madrid](city)?
+    - What is the rain forecast for [Barcelona](city)?
+    - What is the rain forecast for [Cologne](city)?
+    - Tell me the rain forecast in [Jakarta](city).
+    - Tell me the rain forecast in [Delhi](city).
+    - Tell me the rain forecast in [Guangzhou](city).
+    - Tell me the rain forecast in [Mumbai](city).
+    - Give me the rain forecast in [Manila](city).
+    - Give me the rain forecast in [Shanghai](city).
+    - Give me the rain forecast in [Seoul](city).
+    - Give me the rain forecast in [Mexico City](city).
+    - I want to check the rain forecast in [Cairo](city).
+    - I want to check the rain forecast in [New York](city).
+    - I want to check the rain forecast in [Dhaka](city).
+    - I want to check the rain forecast in [Beijing](city).
+    - I'd like to know the rain forecast in [London](city).
+    - I'd like to know the rain forecast in [Toronto](city).
+    - I'd like to know the rain forecast in [New York](city).
+    - I'd like to know the rain forecast in [Rome](city).
+
+- intent: ask_snow_forecast
+  examples: |
+    - Is it going to snow?
+    - Is it going to snow tomorrow?
+    - Will it snow?
+    - Will it snow tomorrow?
+    - What is the snow forecast?
+    - What is the snow forecast for tomorrow?
+    - Tell me the snow forecast.
+    - Tell me the snow forecast for tomorrow.
+    - Give me the snow forecast.
+    - Give me the snow forecast for tomorrow.
+    - I want to check the snow forecast.
+    - I want to check the snow forecast for tomorrow.
+    - I'd like to know the snow forecast.
+    - I'd like to know the snow forecast for tomorrow.
+    - Do I need a snow jacket tomorrow?
+    - Do I need a snow coat tomorrow?
+    - Do I need a snowsuit tomorrow?
+    - Do I need snow boots tomorrow?
+    - Will I need a snow jacket tomorrow?
+    - Will I need a snow coat tomorrow?
+    - Will I need a snowsuit tomorrow?
+    - Will I need snow boots tomorrow?
+
+- intent: ask_snow_forecast_in_location
+  examples: |
+    - Is it going to snow in [London](city)?
+    - Is it going to snow in [Toronto](city)?
+    - Is it going to snow in [New York](city)?
+    - Is it going to snow in [Rome](city)?
+    - Will it snow in [Munich](city)?
+    - Will it snow in [Berlin](city)?
+    - Will it snow in [Hamburg](city)?
+    - What is the snow forecast in [Paris](city)?
+    - What is the snow forecast in [Madrid](city)?
+    - What is the snow forecast for [Barcelona](city)?
+    - What is the snow forecast for [Cologne](city)?
+    - Tell me the snow forecast in [Jakarta](city).
+    - Tell me the snow forecast in [Delhi](city).
+    - Tell me the snow forecast in [Guangzhou](city).
+    - Tell me the snow forecast in [Mumbai](city).
+    - Give me the snow forecast in [Manila](city).
+    - Give me the snow forecast in [Shanghai](city).
+    - Give me the snow forecast in [Seoul](city).
+    - Give me the snow forecast in [Mexico City](city).
+    - I want to check the snow forecast in [Cairo](city).
+    - I want to check the snow forecast in [New York](city).
+    - I want to check the snow forecast in [Dhaka](city).
+    - I want to check the snow forecast in [Beijing](city).
+    - I'd like to know the snow forecast in [London](city).
+    - I'd like to know the snow forecast in [Toronto](city).
+    - I'd like to know the snow forecast in [New York](city).
+    - I'd like to know the snow forecast in [Rome](city).
+
 - synonym: weather
   examples: |
     - weather conditions

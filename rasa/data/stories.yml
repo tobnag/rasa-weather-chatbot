@@ -41,9 +41,17 @@ stories:
   - slot_was_set:
     - humidity: 91
   - slot_was_set:
+    - rain: There is no rain in London (GB, England).
+  - slot_was_set:
+    - snow: There is no snow in London (GB, England).
+  - slot_was_set:
     - temperature_unit: °C
   - slot_was_set:
-    - forecast: Tomorrow, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+    - forecast: Tomorrow noon, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be light rain in London (GB, England).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in London (GB, England).
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
@@ -82,9 +90,17 @@ stories:
   - slot_was_set:
     - humidity: 91
   - slot_was_set:
+    - rain: There is light rain in Berlin (DE).
+  - slot_was_set:
+    - snow: There is no snow in Berlin (DE).
+  - slot_was_set:
     - temperature_unit: °C
   - slot_was_set:
-    - forecast: Tomorrow, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+    - forecast: Tomorrow noon, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be no rain in Berlin (DE).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in Berlin (DE).
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
@@ -130,9 +146,17 @@ stories:
   - slot_was_set:
     - humidity: 91
   - slot_was_set:
+    - rain: There is no rain in London (GB, England).
+  - slot_was_set:
+    - snow: There is no snow in London (GB, England).
+  - slot_was_set:
     - temperature_unit: °C
   - slot_was_set:
-    - forecast: Tomorrow, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+    - forecast: Tomorrow noon, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be light rain in London (GB, England).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in London (GB, England).
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
@@ -171,9 +195,17 @@ stories:
   - slot_was_set:
     - humidity: 91
   - slot_was_set:
+    - rain: There is light rain in Berlin (DE).
+  - slot_was_set:
+    - snow: There is no snow in Berlin (DE).
+  - slot_was_set:
     - temperature_unit: °C
   - slot_was_set:
-    - forecast: Tomorrow, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+    - forecast: Tomorrow noon, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be no rain in Berlin (DE).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in Berlin (DE).
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
@@ -219,11 +251,19 @@ stories:
   - slot_was_set:
     - humidity: 91
   - slot_was_set:
+    - rain: There is no rain in London (GB, England).
+  - slot_was_set:
+    - snow: There is no snow in London (GB, England).
+  - slot_was_set:
     - temperature_unit: °C
   - slot_was_set:
-    - requested_slot: null
+    - forecast: Tomorrow noon, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
   - slot_was_set:
-    - forecast: Tomorrow, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+    - rain_forecast: Tomorrow noon, there will be light rain in London (GB, England).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in London (GB, England).
+  - slot_was_set:
+    - requested_slot: null
   - active_loop: null
   - action: utter_cloudiness
   - checkpoint: story_complete
@@ -260,9 +300,17 @@ stories:
   - slot_was_set:
     - humidity: 91
   - slot_was_set:
+    - rain: There is light rain in Berlin (DE).
+  - slot_was_set:
+    - snow: There is no snow in Berlin (DE).
+  - slot_was_set:
     - temperature_unit: °C
   - slot_was_set:
-    - forecast: Tomorrow, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+    - forecast: Tomorrow noon, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be no rain in Berlin (DE).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in Berlin (DE).
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
@@ -308,9 +356,17 @@ stories:
   - slot_was_set:
     - humidity: 91
   - slot_was_set:
+    - rain: There is no rain in London (GB, England).
+  - slot_was_set:
+    - snow: There is no snow in London (GB, England).
+  - slot_was_set:
     - temperature_unit: °C
   - slot_was_set:
-    - forecast: Tomorrow, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+    - forecast: Tomorrow noon, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be light rain in London (GB, England).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in London (GB, England).
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
@@ -349,9 +405,17 @@ stories:
   - slot_was_set:
     - humidity: 91
   - slot_was_set:
+    - rain: There is light rain in Berlin (DE).
+  - slot_was_set:
+    - snow: There is no snow in Berlin (DE).
+  - slot_was_set:
     - temperature_unit: °C
   - slot_was_set:
-    - forecast: Tomorrow, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+    - forecast: Tomorrow noon, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be no rain in Berlin (DE).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in Berlin (DE).
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
@@ -397,9 +461,17 @@ stories:
   - slot_was_set:
     - humidity: 91
   - slot_was_set:
+    - rain: There is no rain in London (GB, England).
+  - slot_was_set:
+    - snow: There is no snow in London (GB, England).
+  - slot_was_set:
     - temperature_unit: °C
   - slot_was_set:
-    - forecast: Tomorrow, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+    - forecast: Tomorrow noon, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be light rain in London (GB, England).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in London (GB, England).
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
@@ -438,13 +510,231 @@ stories:
   - slot_was_set:
     - humidity: 91
   - slot_was_set:
+    - rain: There is light rain in Berlin (DE).
+  - slot_was_set:
+    - snow: There is no snow in Berlin (DE).
+  - slot_was_set:
     - temperature_unit: °C
   - slot_was_set:
-    - forecast: Tomorrow, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+    - forecast: Tomorrow noon, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be no rain in Berlin (DE).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in Berlin (DE).
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
   - action: utter_humidity
+  - checkpoint: story_complete
+
+# Rain stories
+- story: rain story with given location
+  steps:
+  - intent: ask_rain
+  - action: rain_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_rain
+  - checkpoint: story_complete
+
+- story: short rain story
+  steps:
+  - intent: ask_rain_in_location
+    entities:
+    - city: London
+  - slot_was_set:
+    - user_location: London
+  - action: rain_form
+  - active_loop: rain_form
+  - slot_was_set:
+    - user_location: London
+  - slot_was_set:
+    - mapped_location: London (GB, England)
+  - slot_was_set:
+    - mapped_latitude: 51.5073219
+  - slot_was_set:
+    - mapped_longitude: -0.1276474
+  - slot_was_set:
+    - weather: overcast clouds
+  - slot_was_set:
+    - temperature: 8.36
+  - slot_was_set:
+    - cloudiness: 100
+  - slot_was_set:
+    - wind_speed: 1.79
+  - slot_was_set:
+    - humidity: 91
+  - slot_was_set:
+    - rain: There is no rain in London (GB, England).
+  - slot_was_set:
+    - snow: There is no snow in London (GB, England).
+  - slot_was_set:
+    - temperature_unit: °C
+  - slot_was_set:
+    - forecast: Tomorrow noon, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be light rain in London (GB, England).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in London (GB, England).
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_rain
+  - checkpoint: story_complete
+
+- story: long rain story
+  steps:
+  - intent: ask_rain
+  - action: rain_form
+  - active_loop: rain_form
+  - slot_was_set:
+    - requested_slot: user_location
+  - intent: inform_location
+    entities:
+    - city: Berlin
+  - slot_was_set:
+    - user_location: Berlin
+  - action: rain_form
+  - slot_was_set:
+    - user_location: Berlin
+  - slot_was_set:
+    - mapped_location: Berlin (DE)
+  - slot_was_set:
+    - mapped_latitude: 52.5170365
+  - slot_was_set:
+    - mapped_longitude: 13.3888599
+  - slot_was_set:
+    - weather: light rain
+  - slot_was_set:
+    - temperature: 6.62
+  - slot_was_set:
+    - cloudiness: 100
+  - slot_was_set:
+    - wind_speed: 7.6
+  - slot_was_set:
+    - humidity: 91
+  - slot_was_set:
+    - rain: There is light rain in Berlin (DE).
+  - slot_was_set:
+    - snow: There is no snow in Berlin (DE).
+  - slot_was_set:
+    - temperature_unit: °C
+  - slot_was_set:
+    - forecast: Tomorrow noon, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be no rain in Berlin (DE).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in Berlin (DE).
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_rain
+  - checkpoint: story_complete
+
+# Snow stories
+- story: snow story with given location
+  steps:
+  - intent: ask_snow
+  - action: snow_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_snow
+  - checkpoint: story_complete
+
+- story: short snow story
+  steps:
+  - intent: ask_snow_in_location
+    entities:
+    - city: London
+  - slot_was_set:
+    - user_location: London
+  - action: snow_form
+  - active_loop: snow_form
+  - slot_was_set:
+    - user_location: London
+  - slot_was_set:
+    - mapped_location: London (GB, England)
+  - slot_was_set:
+    - mapped_latitude: 51.5073219
+  - slot_was_set:
+    - mapped_longitude: -0.1276474
+  - slot_was_set:
+    - weather: overcast clouds
+  - slot_was_set:
+    - temperature: 8.36
+  - slot_was_set:
+    - cloudiness: 100
+  - slot_was_set:
+    - wind_speed: 1.79
+  - slot_was_set:
+    - humidity: 91
+  - slot_was_set:
+    - rain: There is no rain in London (GB, England).
+  - slot_was_set:
+    - snow: There is no snow in London (GB, England).
+  - slot_was_set:
+    - temperature_unit: °C
+  - slot_was_set:
+    - forecast: Tomorrow noon, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be light rain in London (GB, England).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in London (GB, England).
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_snow
+  - checkpoint: story_complete
+
+- story: long snow story
+  steps:
+  - intent: ask_snow
+  - action: snow_form
+  - active_loop: snow_form
+  - slot_was_set:
+    - requested_slot: user_location
+  - intent: inform_location
+    entities:
+    - city: Berlin
+  - slot_was_set:
+    - user_location: Berlin
+  - action: snow_form
+  - slot_was_set:
+    - user_location: Berlin
+  - slot_was_set:
+    - mapped_location: Berlin (DE)
+  - slot_was_set:
+    - mapped_latitude: 52.5170365
+  - slot_was_set:
+    - mapped_longitude: 13.3888599
+  - slot_was_set:
+    - weather: light rain
+  - slot_was_set:
+    - temperature: 6.62
+  - slot_was_set:
+    - cloudiness: 100
+  - slot_was_set:
+    - wind_speed: 7.6
+  - slot_was_set:
+    - humidity: 91
+  - slot_was_set:
+    - rain: There is light rain in Berlin (DE).
+  - slot_was_set:
+    - snow: There is no snow in Berlin (DE).
+  - slot_was_set:
+    - temperature_unit: °C
+  - slot_was_set:
+    - forecast: Tomorrow noon, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be no rain in Berlin (DE).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in Berlin (DE).
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_snow
   - checkpoint: story_complete
 
 # Forecast stories
@@ -486,9 +776,17 @@ stories:
   - slot_was_set:
     - humidity: 91
   - slot_was_set:
+    - rain: There is no rain in London (GB, England).
+  - slot_was_set:
+    - snow: There is no snow in London (GB, England).
+  - slot_was_set:
     - temperature_unit: °C
   - slot_was_set:
-    - forecast: Tomorrow, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+    - forecast: Tomorrow noon, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be light rain in London (GB, England).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in London (GB, England).
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
@@ -527,13 +825,231 @@ stories:
   - slot_was_set:
     - humidity: 91
   - slot_was_set:
+    - rain: There is light rain in Berlin (DE).
+  - slot_was_set:
+    - snow: There is no snow in Berlin (DE).
+  - slot_was_set:
     - temperature_unit: °C
   - slot_was_set:
-    - forecast: Tomorrow, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+    - forecast: Tomorrow noon, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be no rain in Berlin (DE).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in Berlin (DE).
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
   - action: utter_forecast
+  - checkpoint: story_complete
+
+# Rain forecast stories
+- story: rain forecast story with given location
+  steps:
+  - intent: ask_rain_forecast
+  - action: rain_forecast_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_rain_forecast
+  - checkpoint: story_complete
+
+- story: short rain forecast story
+  steps:
+  - intent: ask_rain_forecast_in_location
+    entities:
+    - city: London
+  - slot_was_set:
+    - user_location: London
+  - action: rain_forecast_form
+  - active_loop: rain_forecast_form
+  - slot_was_set:
+    - user_location: London
+  - slot_was_set:
+    - mapped_location: London (GB, England)
+  - slot_was_set:
+    - mapped_latitude: 51.5073219
+  - slot_was_set:
+    - mapped_longitude: -0.1276474
+  - slot_was_set:
+    - weather: overcast clouds
+  - slot_was_set:
+    - temperature: 8.36
+  - slot_was_set:
+    - cloudiness: 100
+  - slot_was_set:
+    - wind_speed: 1.79
+  - slot_was_set:
+    - humidity: 91
+  - slot_was_set:
+    - rain: There is no rain in London (GB, England).
+  - slot_was_set:
+    - snow: There is no snow in London (GB, England).
+  - slot_was_set:
+    - temperature_unit: °C
+  - slot_was_set:
+    - forecast: Tomorrow noon, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be light rain in London (GB, England).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in London (GB, England).
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_rain_forecast
+  - checkpoint: story_complete
+
+- story: long rain forecast story
+  steps:
+  - intent: ask_rain_forecast
+  - action: rain_forecast_form
+  - active_loop: rain_forecast_form
+  - slot_was_set:
+    - requested_slot: user_location
+  - intent: inform_location
+    entities:
+    - city: Berlin
+  - slot_was_set:
+    - user_location: Berlin
+  - action: rain_forecast_form
+  - slot_was_set:
+    - user_location: Berlin
+  - slot_was_set:
+    - mapped_location: Berlin (DE)
+  - slot_was_set:
+    - mapped_latitude: 52.5170365
+  - slot_was_set:
+    - mapped_longitude: 13.3888599
+  - slot_was_set:
+    - weather: light rain
+  - slot_was_set:
+    - temperature: 6.62
+  - slot_was_set:
+    - cloudiness: 100
+  - slot_was_set:
+    - wind_speed: 7.6
+  - slot_was_set:
+    - humidity: 91
+  - slot_was_set:
+    - rain: There is light rain in Berlin (DE).
+  - slot_was_set:
+    - snow: There is no snow in Berlin (DE).
+  - slot_was_set:
+    - temperature_unit: °C
+  - slot_was_set:
+    - forecast: Tomorrow noon, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be no rain in Berlin (DE).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in Berlin (DE).
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_rain_forecast
+  - checkpoint: story_complete
+
+# Snow forecast stories
+- story: snow forecast story with given location
+  steps:
+  - intent: ask_snow_forecast
+  - action: snow_forecast_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_snow_forecast
+  - checkpoint: story_complete
+
+- story: short snow forecast story
+  steps:
+  - intent: ask_snow_forecast_in_location
+    entities:
+    - city: London
+  - slot_was_set:
+    - user_location: London
+  - action: snow_forecast_form
+  - active_loop: snow_forecast_form
+  - slot_was_set:
+    - user_location: London
+  - slot_was_set:
+    - mapped_location: London (GB, England)
+  - slot_was_set:
+    - mapped_latitude: 51.5073219
+  - slot_was_set:
+    - mapped_longitude: -0.1276474
+  - slot_was_set:
+    - weather: overcast clouds
+  - slot_was_set:
+    - temperature: 8.36
+  - slot_was_set:
+    - cloudiness: 100
+  - slot_was_set:
+    - wind_speed: 1.79
+  - slot_was_set:
+    - humidity: 91
+  - slot_was_set:
+    - rain: There is no rain in London (GB, England).
+  - slot_was_set:
+    - snow: There is no snow in London (GB, England).
+  - slot_was_set:
+    - temperature_unit: °C
+  - slot_was_set:
+    - forecast: Tomorrow noon, the weather in London (GB, England) will be rain at 10 °C and 6 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be light rain in London (GB, England).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in London (GB, England).
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_snow_forecast
+  - checkpoint: story_complete
+
+- story: long snow forecast story
+  steps:
+  - intent: ask_snow_forecast
+  - action: snow_forecast_form
+  - active_loop: snow_forecast_form
+  - slot_was_set:
+    - requested_slot: user_location
+  - intent: inform_location
+    entities:
+    - city: Berlin
+  - slot_was_set:
+    - user_location: Berlin
+  - action: snow_forecast_form
+  - slot_was_set:
+    - user_location: Berlin
+  - slot_was_set:
+    - mapped_location: Berlin (DE)
+  - slot_was_set:
+    - mapped_latitude: 52.5170365
+  - slot_was_set:
+    - mapped_longitude: 13.3888599
+  - slot_was_set:
+    - weather: light rain
+  - slot_was_set:
+    - temperature: 6.62
+  - slot_was_set:
+    - cloudiness: 100
+  - slot_was_set:
+    - wind_speed: 7.6
+  - slot_was_set:
+    - humidity: 91
+  - slot_was_set:
+    - rain: There is light rain in Berlin (DE).
+  - slot_was_set:
+    - snow: There is no snow in Berlin (DE).
+  - slot_was_set:
+    - temperature_unit: °C
+  - slot_was_set:
+    - forecast: Tomorrow noon, the weather in Berlin (DE) will be broken clouds at 8 °C and 3 m/s wind speed.
+  - slot_was_set:
+    - rain_forecast: Tomorrow noon, there will be no rain in Berlin (DE).
+  - slot_was_set:
+    - snow_forecast: Tomorrow noon, there will be no snow in Berlin (DE).
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_snow_forecast
   - checkpoint: story_complete
 
 # If the user thanks or affirms, the user is asked for mor assistance.
