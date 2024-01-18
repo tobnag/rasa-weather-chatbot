@@ -2,7 +2,7 @@
 
 This project implements a weather forecast chatbot with [Rasa Open Source](https://rasa.com/docs/rasa/).
 
-The chatbot enables users to request location-based weather information using natural language. Thereby, information like weather conditions, temperature, wind speed, etc. can be provided. User requests are answered with real weather data retrieved from [OpenWeather](https://openweathermap.org/api)'s GeoLocation and Weather APIs [(OpenWeather, 2023a; OpenWeather, 2023b; OpenWeather, 2023c)](#sources).
+Users can request location-based weather information with natural language. The chatbot handles requests about the current weather, temperature, cloudiness, wind speed, humidity, rainfall, snowfall, and the forecast for the next day, including rain and snow information. User requests are answered with live data from [OpenWeather](https://openweathermap.org/api)'s geocoding and weather APIs [(OpenWeather, 2023a; OpenWeather, 2023b; OpenWeather, 2023c)](#sources).
 
 The following diagram illustrates the architecture and main components of the solution.
 
@@ -63,7 +63,17 @@ Finally, open another terminal window within the `/rasa` directory and start the
 rasa shell
 ```
 
-You can now interact with the chatbot using the shell interface.
+You can now interact with the chatbot using the shell interface. You can ask the chatbot questions about the following details:
+- Current weather
+- Temperature
+- Cloudiness
+- Wind speed
+- Humidity
+- Rainfall
+- Snowfall
+- Forecast for the next day at noon
+- If there will be rain the next day at noon
+- If there will be snow the next day at noon
 
 > **Note**
 > The Natural Language Understanding (NLU) component uses a lookup table to identify city names in user messages. The lookup table is defined in [cities.yml](./rasa/data/cities.yml) and was created by parsing the basic database from [simplemaps.com](https://simplemaps.com/data/world-cities) [(SimpleMaps, 2023)](#sources).
@@ -71,9 +81,18 @@ You can now interact with the chatbot using the shell interface.
 ## Limitations
 The following limitations apply to this project:
 - The application is not designed for production use. It is intended to demonstrate the operating principles of a conversational AI.
-- The chatbot only supports English language.
-- The training data for the NLU component is limited. The chatbot can only handle a small set of wordings for specific requests.
-- The interaction capabilities of the chatbot are limited. It is not able to handle complex requests or conversations.
+- A CI/CD pipeline is not set up.
+- The chatbot can only be accessed locally via a command line interface.
+- For demonstration purposes, the chatbot is connected to public APIs which require a personal API key.
+- The chatbot supports only English language.
+- The chatbot is limited to questions about the current weather, temperature,
+cloudiness, wind speed, humidity, rainfall, snowfall, and the forecast for the next day, including rain and snow information.
+- The weather forecast is restricted to the weather at noon of the next day.
+- The chatbot uses only metric units.
+- The training data of the NLU component is limited. The chatbot can only handle a
+tailored set of wordings for specific requests.
+- The interaction capabilities of the chatbot are limited. It is not able to deal with
+complex requests or conversations.
 
 ## Sources
 The following sources were used to create this project:
